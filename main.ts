@@ -10,9 +10,9 @@ radio.onReceivedValue(function (name, value) {
             retning = value
         } else if (name == "fart") {
             fart = value
-            basic.showNumber(fart)
         }
-        bitbot.driveMilliseconds(fart, 100)
+        led.plot(fart, retning)
+        bitbot.driveMilliseconds(600, 100)
     }
 })
 let fart = 0
@@ -27,6 +27,6 @@ basic.forever(function () {
     if (remotecontrol == 1) {
         radio.sendValue("retning", input.rotation(Rotation.Roll))
         radio.sendValue("fart", input.rotation(Rotation.Pitch))
-        basic.pause(100)
+        basic.pause(1000)
     }
 })

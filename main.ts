@@ -12,8 +12,8 @@ let retning = 0
 let Radiogruppe = 9
 radio.setGroup(Radiogruppe)
 basic.showNumber(Radiogruppe)
-basic.pause(100)
 basic.forever(function () {
     radio.sendValue("retning", input.rotation(Rotation.Roll))
     radio.sendValue("fart", input.rotation(Rotation.Pitch))
+    basic.pause(1000)
 })
